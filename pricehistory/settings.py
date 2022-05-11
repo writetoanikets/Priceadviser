@@ -43,7 +43,7 @@ ALLOWED_HOSTS = ['priceadviser.herokuapp.com']
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
 
-    'sass_processor',
+    # 'sass_processor',
     'crispy_forms',
     'links',
     'django.contrib.admin',
