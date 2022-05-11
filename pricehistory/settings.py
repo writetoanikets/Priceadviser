@@ -135,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'sass_processor.finders.CssFinder',
+    # 'sass_processor.finders.CssFinder',
 ]
 
 # Internationalization
@@ -161,7 +161,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR/'static']
 STATIC_ROOT = os.path.join(BASE_DIR, "static-root")
 
-SASS_PROCESSOR_ROOT = STATIC_ROOT
+# SASS_PROCESSOR_ROOT = STATIC_ROOT
 # crispy form
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
