@@ -1,6 +1,5 @@
 # import csv
 from selenium import webdriver
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 # from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -59,28 +58,6 @@ import os
 #     return name, price
 
 
-# make driver config
-def load_driver():
-    options = webdriver.FirefoxOptions()
-
-    # enable trace level for debugging
-    options.log.level = "trace"
-
-    options.add_argument("-remote-debugging-port=9224")
-    options.add_argument("-headless")
-    options.add_argument("-disable-gpu")
-    options.add_argument("-no-sandbox")
-
-    binary = FirefoxBinary(os.environ.get('FIREFOX_BIN'))
-
-    firefox_driver = webdriver.Firefox(
-        firefox_binary=binary,
-        executable_path=os.environ.get('GECKODRIVER_PATH'),
-        options=options)
-
-    return firefox_driver
-
-
 # get_data(url)
 def get_data(url):
     # DRIVER_PATH = str(Path('links/geckodriver').resolve())
@@ -91,7 +68,15 @@ def get_data(url):
     # text = driver.page_source
     # driver.close()
 
-    driver = load_driver()
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    driver = webdriver.Chrome(executable_path=os.environ.get(
+        "CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+
+    # driver = load_driver()
     driver.get(url)
     text = driver.page_source
     driver.close()
