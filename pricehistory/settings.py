@@ -100,6 +100,20 @@ WSGI_APPLICATION = 'pricehistory.wsgi.application'
 # }
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'pricehistory',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
+#         'USER ': 'postgres',
+#         'PASSWORD': 'admin123',
+
+
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',

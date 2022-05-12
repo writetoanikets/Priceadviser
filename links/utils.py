@@ -1,7 +1,7 @@
-import csv
+# import csv
 from selenium import webdriver
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-# from selenium.webdriver.firefox.options import Options as FirefoxOptions
+# from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from bs4 import BeautifulSoup
 from pathlib import Path
 import os
