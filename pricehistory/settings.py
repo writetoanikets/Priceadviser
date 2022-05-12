@@ -30,10 +30,9 @@ environ.Env.read_env()
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
 
-# SECRET_KEY = 'django-insecure-3lfu$eh-e2=inoz8%88ivbmwt!7s!u6=8ju-wbr#^167t&^t@m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = ['priceadviser.herokuapp.com']
 
@@ -88,30 +87,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pricehistory.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'pricehistory',
-#         'HOST': 'localhost',
-#         'PORT': 5432,
-#         'USER ': 'postgres',
-#         'PASSWORD': 'admin123',
-
-
-#     }
-# }
 
 
 DATABASES = {
